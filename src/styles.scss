@@ -1,0 +1,64 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+
+form.ng-invalid.ng-dirty.ng-touched
+.ng-invalid.ng-touched.invalid-alert{
+    border-color: rgb(255, 0, 0);
+    box-shadow: 0px 1px 0px 0px #a62626;
+    -webkit-box-shadow : 0px 1px 0px 0px #a62626;
+
+    transition: 
+    border .3s,
+    box-shadow .3s, 
+    -webkit-box-shadow .3s;
+}
+
+form.ng-invalid.ng-dirty.ng-touched
+.ng-invalid.ng-touched.invalid-alert + label{
+    color:red;
+}
+
+
+form.ng-invalid.ng-dirty.ng-touched
+input.ng-invalid.ng-touched:not([type]):not([readonly]):focus + label, 
+input[type=text].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=password].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=email].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=url].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=time].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=date].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=datetime].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=datetime-local].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=tel].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=number].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+input[type=search].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus + label, 
+textarea.ng-invalid.ng-touched:not([readonly]).materialize-textarea:focus + label{
+    color: red;
+}
+
+form.ng-invalid.ng-dirty.ng-touched
+input.ng-invalid.ng-touched:not([type]):not([readonly]):focus, 
+input[type=text].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=password].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=email].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=url].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=time].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=date].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=datetime].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=datetime-local].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=tel].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=number].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+input[type=search].ng-invalid.ng-touched:not([readonly]):not(.browser-default):focus, 
+textarea.ng-invalid.ng-touched:not([readonly]).materialize-textarea:active{
+    border-bottom:  1px solid rgb(255, 0, 0);
+
+    -webkit-box-shadow: 1px solid rgb(255, 0, 0);
+    box-shadow:0px 1px 0px 0px  rgb(255, 0, 0);
+
+    transition: 
+    border .3s,
+    box-shadow .3s, 
+    -webkit-box-shadow .3s;
+
+}

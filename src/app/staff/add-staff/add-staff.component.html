@@ -1,0 +1,138 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Add Staff</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Staffs</a>
+                        </li>
+                        <li class="breadcrumb-item active">Add Staff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit(basicForm)">
+                                    <h2 class="card-inside-title">Staff Information</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input id="fname" type="text">
+                                                <label for="fname">First Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input id="lname" type="text">
+                                                <label for="lname">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input id="email" type="email">
+                                                <label for="email">Email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input id="desig" type="text">
+                                                <label for="desig">Designation</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Select Department</option>
+                                                    <option value="1">Neurology</option>
+                                                    <option value="2">Orthopedics</option>
+                                                    <option value="3">Gynaecology</option>
+                                                    <option value="4">Microbiology</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea id="address" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="address">Address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input id="moNo" type="text">
+                                                <label for="moNo">Mobile Number</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker" class="flatPicker">
+                                                    <label for="myDatePicker">Date Of Birth</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="fallback">
+                                            <label>Upload Photo</label>
+                                            <dropzone style="width: 100%;" [config]="config"
+                                                [message]="'<h3>Drop files here or click to upload.</h3><em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>'">
+                                            </dropzone>
+                                        </div>
+                                    </form> -->
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea id="note" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="note">Education</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

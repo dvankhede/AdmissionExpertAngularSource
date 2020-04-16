@@ -1,0 +1,126 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Add Payment</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Payment</a>
+                        </li>
+                        <li class="breadcrumb-item active">Add Payment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit(basicForm)">
+                                    <h2 class="card-inside-title">Payment Information</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <input id="bNo" type="text">
+                                                <label for="bNo">Bill No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <input id="pName" type="text">
+                                                <label for="pName">Patient Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Doctor Name</option>
+                                                    <option value="1">DR. John Deo</option>
+                                                    <option value="2">Dr.Rajesh</option>
+                                                    <option value="3">DR. Megha Trivedi </option>
+                                                    <option value="4">DR. Smith</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker" class="flatPicker">
+                                                    <label for="myDatePicker">Payment Date</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <input id="dis" type="text">
+                                                <label for="dis">Discount</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <input id="total" type="text">
+                                                <label for="total">Total Ammount</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Payment Method</option>
+                                                    <option value="1">Cash</option>
+                                                    <option value="2">Cheque</option>
+                                                    <option value="3">Credit Card </option>
+                                                    <option value="4">Debit Card</option>
+                                                    <option value="s">Netbanking</option>
+                                                    <option value="6">Insurence</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Payment Status</option>
+                                                    <option value="1">Complete</option>
+                                                    <option value="2">Pending</option>
+                                                    <option value="3">Partial </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

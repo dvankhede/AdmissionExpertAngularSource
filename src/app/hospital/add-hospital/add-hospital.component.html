@@ -1,0 +1,111 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Add Hospital</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Hospital</a> 
+                        </li>
+                        <li class="breadcrumb-item active">Add Hospital</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+
+                                
+                                <!-- Form start -->
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit(basicForm)">
+                                    <h2 class="card-inside-title">Hospital Information</h2>
+
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12" >
+                                                <input class="invalid-alert" id="hname" type="text" formControlName="hnameControl"
+                                                    autofocus>
+                                                <label for="hname">Hospital Name*</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12 ">
+                                                <textarea class="invalid-alert" id="addr" class="materialize-textarea" formControlName="addressControl" ></textarea>
+                                                <label for="addr">Address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row clearfix">
+
+                                        <div class="col-sm-4">
+                                            <div class="input-field col s12">
+                                                <input class="invalid-alert" id="city" type="text" formControlName="cityControl" >
+                                                <label for="city">City*</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="input-field col s12 ,f">
+                                                <input class="invalid-alert" id="zipcode" type="text" formControlName="zipcodeControl" >
+                                                <label class="invalid-alert" for="zipcode">Zip Code*</label>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-sm-4">
+                                            <div class="input-field col s12 ">
+                                                <select id="stateId" formControlName="stateIdControl">
+                                                    <option value="" disabled selected>Select State</option>
+                                                    <option value="{{state.id}}" *ngFor="let state of states">{{state.name}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="fallback">
+                                            <label>Upload Photo</label>
+                                            <dropzone style="width: 100%;" [config]="config"
+                                                [message]="'<h3>Drop files here or click to upload.</h3><em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>'">
+                                            </dropzone>
+                                        </div> </form> -->
+
+
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                             class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+
+                                            <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect" (click)="test()">sssss</button>
+                                    </div>
+
+                                </form>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,166 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Add Record</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Records</a>
+                        </li>
+                        <li class="breadcrumb-item active">Add Record</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit(basicForm)">
+                                    <h2 class="card-inside-title">Patient Record</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <input id="fname" type="text">
+                                                <label for="fname">Patient Name</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <label for="presc">Prescription</label><br><br>
+                                                    <textarea id="presc" rows="5" cols="60"></textarea>                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select>
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker" class="flatPicker">
+                                                    <label for="myDatePicker">Date Of Birth</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row clearfix">
+                                       
+                                        <div class="col-sm-2">
+                                            <div class="input-field col s12">
+                                                <input id="weight" type="text">
+                                                <label for="weight">Weight</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="height" type="text">
+                                                    <label for="height">Height</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-sm-3">
+                                            <div class="input-field col s12">
+                                                <input id="bp" type="text">
+                                                <label for="bp">Blood Pressure</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="bmi" type="text">
+                                                    <label for="bmi">BMI</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="hr" type="text">
+                                                    <label for="hr">Heart Rate</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                       
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <label for="problem">Problem</label><br><br>
+                                                    <textarea id="problem" rows="4" cols="50"></textarea>                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <label for="symptom">Symptom</label><br><br>
+                                                    <textarea id="symptom" rows="4" cols="50"></textarea>                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <label for="notes">Notes</label><br><br>
+                                                    <textarea id="notes" rows="4" cols="50"></textarea>                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 
+                                   
+                                    <!-- <form action="/" id="frmfileupload" class="dropzone" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="fallback">
+                                            <label>upload photo</label>
+                                            <dropzone style="width: 100%;" [config]="config"
+                                                [message]="'<h3>drop files here or click to upload.</h3><em>(this is just a demo dropzone. selected files are <strong>not</strong> actually uploaded.)</em>'">
+                                            </dropzone>
+                                        </div>
+                                    </form> -->
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                            <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Print & Submit Prescription</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

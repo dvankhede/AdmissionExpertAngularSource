@@ -1,0 +1,154 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Edit Appointment</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Appointment</a>
+                        </li>
+                        <li class="breadcrumb-item active">Edit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Input -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit(basicForm)">
+                                    <h2 class="card-inside-title">Personal Information</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="fname" type="text">
+                                                <label for="fname">First Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="lname" type="text">
+                                                <label for="lname">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select formControlName="gender">
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option [ngValue]="genderType"
+                                                        *ngFor="let genderType of genderTypes">{{genderType.desc}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="mobile" type="text">
+                                                <label for="mobile">Mobile Number</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea formControlName="address" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="address">Address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="email" type="email">
+                                                <label for="email">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker" formControlName="myDatePicker"
+                                                        class="flatPicker">
+                                                    <label for="myDatePicker">Date Of Birth</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="card-inside-title">Appointment Details</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select formControlName="doctor">
+                                                    <option value="" disabled selected>Consulting Doctor</option>
+                                                    <option [ngValue]="doctorName" *ngFor="let doctorName of doctors">
+                                                        {{doctorName.desc}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDateTimePicker" formControlName="myDateTimePicker">
+                                                    <label for="myDateTimePicker">Date & TIme Of Appointment</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea formControlName="injury" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="injury">injury/condition</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker2" formControlName="theraphyDate"
+                                                        class="flatPicker">
+                                                    <label for="myDatePicker">Theraphy Start Date</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea formControlName="note" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="note">Note</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Input -->
+    </div>
+</section>

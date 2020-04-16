@@ -1,0 +1,1 @@
+{"stateId":1,"firstName":"aa","lastName":"dd","gender":"1","dateOfBirth":"3/11/2020","mobileNumber":"9881756489","email":"aa@cc.com","address":"aa","hospitalId":1,"city":"pune","middleName":"abc","zipcode":411041} 

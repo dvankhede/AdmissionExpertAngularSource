@@ -1,0 +1,244 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Edit User</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-2">
+                            <a href="#" onClick="return false;">Users</a>
+                        </li>
+                        <li class="breadcrumb-item active">Edit User</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <form [formGroup]="basicForm" (ngSubmit)="onSubmit()">
+                                    <h2 class="card-inside-title">User Information</h2>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="fullName" type="text" >
+                                                <label class="active" for="fname">Full Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select formControlName="gender">
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option [ngValue]="genderType"
+                                                        *ngFor="let genderType of genderArray">{{genderType}}
+                                                    </option>
+                                                     <option value="Male"  selected>Male</option> 
+                                                     <option value="Female"  selected>Female</option> 
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-field col s12">
+                                                    <input id="myDatePicker" formControlName="myDatePicker"
+                                                        class="flatPicker">
+                                                    <label for="myDatePicker">Date Of Birth</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <div class="input-field col s12">
+                                                    <input id="pcbPercentage" type="number" formControlName="pcbPercentage" class="form-control" 
+                                                    [ngClass]="{ 'is-invalid': submitted && f.pcbPercentage.errors }" >
+                                                    <div *ngIf="submitted && f.pcbPercentage.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.pcbPercentage.errors?.required">PCB Percentage is required</div>
+                                                      </div>
+                                                    
+                                                    <label for="PCB Percentage">PCB Percentage</label>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-sm-6">
+                                                <div class="input-field col s12">
+                                                    <input id="neetScore" type="number" formControlName="neetScore" class="form-control" 
+                                                    [ngClass]="{ 'is-invalid': submitted && f.neetScore.errors }" >
+                                                    <div *ngIf="submitted && f.neetScore.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.neetScore.errors?.required">NEET Score is required</div>
+                                                      </div>   
+                                                    <label for="NEET Score">NEET Score</label>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="col-sm-6">
+                                                    <div class="input-field col s12">
+                                                        <input id="allIndiaRank" type="number" formControlName="allIndiaRank" class="form-control" 
+                                                        [ngClass]="{ 'is-invalid': submitted && f.allIndiaRank.errors }" >
+                                                        <div *ngIf="submitted && f.allIndiaRank.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.allIndiaRank.errors?.required">All India Rank is required</div>
+                                                          </div>                                                   
+                                                        <label for="All India Rank is required">All India</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="input-field col s12">
+                                                        <input id="stateRank" type="number" formControlName="stateRank" class="form-control" 
+                                                        [ngClass]="{ 'is-invalid': submitted && f.stateRank.errors }" >
+                                                        <div *ngIf="submitted && f.stateRank.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.stateRank.errors?.required">State Rank is required</div>
+                                                          </div>   
+                                                        <label for="State Rank">State Rank</label>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+
+                                    <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <div class="input-field col s12 ">
+                                                    <select formControlName="casteCategoryId" required
+                                                     [ngClass]="{ 'is-invalid': submitted && f.casteCategoryId.errors }" > 
+                                                        <option value="" disabled selected>Select Category</option>
+                                                        <option *ngFor="let element of castCategory" [value]="element.id">{{element.name}}</option>
+                                                    </select>
+                                                    <div *ngIf="submitted && f.casteCategoryId.errors" class="invalid-feedback d-block" >
+                                                        <div *ngIf="f.casteCategoryId.errors.required">Please select category</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-field col s12">
+                                                        <select formControlName="stateId" required
+                                                        [ngClass]="{ 'is-invalid': submitted && f.stateId.errors }" > 
+                                                           <option value="" disabled selected>Select State</option>
+                                                           <option *ngFor="let element of state" [value]="element.id">{{element.name}}</option>
+                                                       </select>
+                                                       <div *ngIf="submitted && f.stateId.errors" class="invalid-feedback d-block" >
+                                                           <div *ngIf="f.stateId.errors.required">Please select state</div>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                    <div class="col-sm-6">
+                                                        <div class="input-field col s12">
+                                                                <select formControlName="cityId" required
+                                                                [ngClass]="{ 'is-invalid': submitted && f.cityId.errors }" > 
+                                                                   <option value="" disabled selected>Select City</option>
+                                                                   <option *ngFor="let element of city" [value]="element.id">{{element.name}}</option>
+                                                               </select>
+                                                               <div *ngIf="submitted && f.cityId.errors" class="invalid-feedback d-block" >
+                                                                   <div *ngIf="f.cityId.errors.required">Please select city</div>
+                                                               </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-sm-6">
+                                                        <div class="input-field col s12">
+                                                            <input id="mobile" type="text" class="form-control" formControlName="mobile"
+                                                            [ngClass]="{ 'is-invalid': submitted && mobile?.errors }" >
+                                                                                                                           <div *ngIf="(mobile.invalid && mobile.touched) || mobile.dirty">
+                                                                <small *ngIf="mobile.errors?.required" class="text-danger">Mobile number is required</small>
+                                                                  
+                                                                     <small *ngIf="mobile.errors?.pattern" class="text-danger">  
+                                                                  Mobile number not valid.  
+                                                                </small>   
+                                                              </div>
+                                                              
+                                                            <label for="mobile">Mobile Number</label>
+                                                        </div>
+                                                    </div> -->
+                                                </div>                                  
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="email" type="email">
+                                                <label for="email">Email</label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-sm-6">
+                                            <div class="input-field col s12 ">
+                                                <select formControlName="maritalStatus">
+                                                    <option value="" disabled selected>Marital Status</option>
+                                                    <option [ngValue]="status" *ngFor="let status of maritalStatus">
+                                                        {{status}}
+                                                    </option>
+                                                    <option value="Single"  selected>Single</option> 
+                                                    <option value="Married"  selected>Married</option> 
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <!-- <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <div class="input-field col s12">
+                                                <textarea formControlName="address" class="materialize-textarea"
+                                                    data-length="120"></textarea>
+                                                <label for="address">Address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="bGroup" type="text">
+                                                <label for="bGroup">Blood Group</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="bPresure" type="text">
+                                                <label for="bPresure">Blood Presure</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="sugger" type="text">
+                                                <label for="sugger">Sugger</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-field col s12">
+                                                <input formControlName="injury" type="text">
+                                                <label for="injury">Injury/Condition</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="fallback">
+                                            <label>Upload Photo</label>
+                                            <dropzone style="width: 100%;" [config]="config"
+                                                [message]="'<h3>Drop files here or click to upload.</h3><em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>'">
+                                            </dropzone>
+                                        </div>
+                                    </form> -->
+                                    <div class="col-lg-12 p-t-20 text-center">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-border-radius waves-effect m-r-15">Submit</button>
+                                        <button type="button"
+                                            class="btn btn-danger btn-border-radius waves-effect">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
