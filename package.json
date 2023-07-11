@@ -65,7 +65,7 @@
     "gulp-uglifycss": "^1.1.0",
     "gulp-webserver": "^0.9.1",
     "inputmask": "^3.3.11",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-countto": "^1.2.0",
     "jquery-knob": "^1.2.11",
     "jquery-nestable": "^0.8.0",
